@@ -1,0 +1,69 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeaea"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.akamyshev.timetableclock.TimetableClock">
+
+        <!--android:background="#ffeeeeee"-->
+    <com.akamyshev.timetableclock.TimeX.ArcProgress
+        android:id="@+id/arc_progress_view"
+        android:paddingTop="12dp"
+        android:padding="6dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        custom:arc_progress="0"
+        custom:arc_angle="230"
+        custom:arc_unfinished_color="#b6b6b6"
+        custom:arc_finished_color="#5ecc69"
+        custom:arc_bottom_text_size="22sp"
+        custom:arc_stroke_width="16dp"
+        custom:arc_suffix_text_padding="-8dp"
+        custom:arc_suffix_text_size="32sp"
+        custom:arc_suffix_text="'"
+        custom:arc_bottom_text="Закончится через"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        custom:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="0dp"
+        android:layout_height="239dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.0"
+        custom:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        custom:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.562"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/arc_progress_view"
+        custom:layout_constraintVertical_bias="1.0">
+        <TextView
+            android:textSize="18sp"
+            tools:text="Идет 5 урок"
+            android:gravity="center_vertical|center_horizontal"
+            android:id="@+id/clock_info_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>
