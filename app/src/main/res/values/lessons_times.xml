@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Среда
+    <string name="time_wednesdayHours"  >8:9:9:10:10:11:11:12:12:12:12:13:13:14:14:15:15:15:16:16</string>
+    <string name="time_wednesdayMinutes">30:10:20:0:20:0:20:0:10:50:55:35:40:20:25:5:15:55:0:40</string>
+    <string name="time_wednesdayRests"  >10:20:20:10:5:5:5:10:5:5</string>
+    //Суббота
+    <string name="time_saturdayHours"  >8:9:9:10:10:11:11:12:12:12:13:13</string>
+    <string name="time_saturdayMinutes">30:15:20:5:15:0:15:0:10:55:0:45</string>
+    <string name="time_saturdayRests"  >5:10:15:10:5:5</string>
+    //Обычные дни
+    <string name="time_otherDayHours"  >8:9:9:10:10:11:11:12:12:13:13:14:14:15:15:16</string>
+    <string name="time_otherDayMinutes">30:15:30:15:35:20:40:25:35:20:30:15:20:5:15:0</string>
+    <string name="time_otherDayRests"  >15:20:20:10:10:5:10:5</string>
+
+</resources>
