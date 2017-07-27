@@ -41,6 +41,8 @@ class TimetableClock : Fragment() {
         recycler.layoutManager = LinearLayoutManager(context)
         recycler.setHasFixedSize(true)
 
+
+
         recycler.adapter = LessonRecyclerAdapter()
 
         return view
@@ -82,21 +84,22 @@ class TimetableClock : Fragment() {
 
     class LessonTime(val startTime: Time, val endTime: Time, val freeTime: Int)
 
-//    override fun onStart() {
-//        super.onStart()
-//        val mResreshInfoRunnable = object : Runnable {
-//            override fun run() {
+    override fun onStart() {
+        super.onStart()
+        val mResreshInfoRunnable = object : Runnable {
+            override fun run() {
 //                Log.i("HANDLER", "in handler: " + Calendar.getInstance().get(Calendar.MINUTE) + ":" + Calendar.getInstance().get(Calendar.SECOND))
 //                if (Calendar.getInstance().get(Calendar.SECOND) == 0) {
 //                    Log.i("TimetableClock", "seconds == 0")
 //                    if (!setAllData()) return
 //                }
-//                handler.postDelayed(this, 1000)
-//            }
-//        }
-//        mResreshInfoRunnable.run()
-//
-//    }
+                roundCornerProgressBar.progress++
+                handler.postDelayed(this, 1000)
+            }
+        }
+        mResreshInfoRunnable.run()
+
+    }
 //
 //
 //

@@ -77,22 +77,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="с 8:30 до 9:15"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/clock_info_item_is_now_image_view"
-            app:layout_constraintStart_toEndOf="@+id/clock_info_item_free_time_text_view"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteY="26dp" />
-
-        <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
