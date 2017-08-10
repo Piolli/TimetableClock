@@ -9,11 +9,11 @@
     <item
         android:id="@+id/action_schedules"
         android:enabled="true"
-        android:title="Уроки"
+        android:title="Часы"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_music"
         android:enabled="true"
-        android:title="Часы"
+        android:title="Новости с сайта"
         app:showAsAction="ifRoom" />
 </menu>

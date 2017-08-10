@@ -1,6 +1,7 @@
 package com.akamyshev.timetableclock.TimeX;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 
@@ -24,69 +25,56 @@ public class TimeAnalyzer {
     BiTime mBiTime = new BiTime();
 
 
-    public TimeAnalyzer(Context context) {
-        date = new Date(Calendar.getInstance().getTime().getTime());
-        this.context = context;
-        int HMR[][] = getInfoLess();
-        if(HMR != null) {
-            hoursL = HMR[0];
-            minutL = HMR[1];
-            restL = HMR[2];
-        }
-        else {
-            mBiTime.setMessage(BiTime.Message.HMRIsNull);
-            Log.e(TAG, "HMR is null");
-        }
-        //Log.e(TAG, getInfoLess().length + " <- size");
-    }
-
     //Конструктор, вызаваемый при наличии данных с интернета
-    public TimeAnalyzer(ITime iTime) {
+    public TimeAnalyzer(Context context, @NonNull ITime iTime, boolean isFromServer) {
+        this.context = context;
         date = new Time(Calendar.getInstance().getTime().getTime());
-        today = typeToday.SERVER;
+
         hoursL = iTime.hours;
         minutL = iTime.minut;
         restL = iTime.rests;
+
+//        today = isFromServer ? -1 : Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
     }
 
-    int[][] getInfoLess() {
-        int day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
-        //Log.i(TAG, "dayOfWeak: " + day);
-        int[][] HMR = new int[3][];
-        switch (day) {
-            //среда
-            case Calendar.WEDNESDAY: {
-                today = typeToday.WEDNESDAY;
-                HMR[0] = getArrayTimes(R.string.time_wednesdayHours);
-                HMR[1] = getArrayTimes(R.string.time_wednesdayMinutes);
-                HMR[2] = getArrayTimes(R.string.time_wednesdayRests);
-                return HMR;
-            }
-            //суббота
-            case Calendar.SATURDAY: {
-                today = typeToday.SATURDAY;
-                HMR[0] = getArrayTimes(R.string.time_saturdayHours);
-                HMR[1] = getArrayTimes(R.string.time_saturdayMinutes);
-                HMR[2] = getArrayTimes(R.string.time_saturdayRests);
-                return HMR;
-            }
-            case Calendar.MONDAY: { }
-            case Calendar.TUESDAY: { }
-            case Calendar.THURSDAY: { }
-            case Calendar.FRIDAY: {
-                today = typeToday.OTHER;
-                HMR[0] = getArrayTimes(R.string.time_otherDayHours);
-                HMR[1] = getArrayTimes(R.string.time_otherDayMinutes);
-                HMR[2] = getArrayTimes(R.string.time_otherDayRests);
-                return HMR;
-            }
-            default: {
-                mBiTime.setMessage(BiTime.Message.TodayIsNotSupport);
-                Log.e(TAG, "getInfoLess return null");
-                return null;
-            }
-        }
-    }
+//    int[][] getInfoLess() {
+//        int day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+//        //Log.i(TAG, "dayOfWeak: " + day);
+//        int[][] HMR = new int[3][];
+//        switch (day) {
+//            //среда
+//            case Calendar.WEDNESDAY: {
+//                today = typeToday.WEDNESDAY;
+//                HMR[0] = getArrayTimes(R.string.time_wednesdayHours);
+//                HMR[1] = getArrayTimes(R.string.time_wednesdayMinutes);
+//                HMR[2] = getArrayTimes(R.string.time_wednesdayRests);
+//                return HMR;
+//            }
+//            //суббота
+//            case Calendar.SATURDAY: {
+//                today = typeToday.SATURDAY;
+//                HMR[0] = getArrayTimes(R.string.time_saturdayHours);
+//                HMR[1] = getArrayTimes(R.string.time_saturdayMinutes);
+//                HMR[2] = getArrayTimes(R.string.time_saturdayRests);
+//                return HMR;
+//            }
+//            case Calendar.MONDAY: { }
+//            case Calendar.TUESDAY: { }
+//            case Calendar.THURSDAY: { }
+//            case Calendar.FRIDAY: {
+//                today = typeToday.OTHER;
+//                HMR[0] = getArrayTimes(R.string.time_otherDayHours);
+//                HMR[1] = getArrayTimes(R.string.time_otherDayMinutes);
+//                HMR[2] = getArrayTimes(R.string.time_otherDayRests);
+//                return HMR;
+//            }
+//            default: {
+//                mBiTime.setMessage(BiTime.Message.TodayIsNotSupport);
+//                Log.e(TAG, "getInfoLess return null");
+//                return null;
+//            }
+//        }
+//    }
 
     private int[] getArrayTimes(int id) {
         return convertStringArrayToIntArray(context.getResources().getString(id).split(":"));

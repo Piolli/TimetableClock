@@ -47,7 +47,7 @@
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/roundCornerProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/clock_progress_view"
         custom:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
         android:layout_marginBottom="0dp"
@@ -62,6 +62,7 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="#fff"
         app:itemTextColor="#fff"
+
         app:menu="@xml/menu"
         tools:layout_editor_absoluteX="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,7 +83,7 @@
         app:rcProgress="40"
         app:rcProgressColor="#7da8fd"
         app:rcRadius="2dp"
-        android:id="@+id/roundCornerProgressBar"
+        android:id="@+id/clock_progress_view"
         app:layout_constraintHorizontal_bias="0.5"
         android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -105,7 +106,7 @@
         custom:layout_constraintTop_toBottomOf="@+id/arc_progress_view">
 
         <TextView
-            android:id="@+id/clock_info_label"
+            android:id="@+id/clock_title_progress_lesson"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal"
@@ -115,7 +116,7 @@
     </android.support.v7.widget.CardView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/clock_info_remain_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -124,9 +125,9 @@
         android:layout_marginTop="8dp"
         android:text="до конца урока осталось 23 минуты"
         android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="@+id/roundCornerProgressBar"
-        app:layout_constraintEnd_toEndOf="@+id/roundCornerProgressBar"
-        app:layout_constraintStart_toStartOf="@+id/roundCornerProgressBar"
+        app:layout_constraintBottom_toBottomOf="@+id/clock_progress_view"
+        app:layout_constraintEnd_toEndOf="@+id/clock_progress_view"
+        app:layout_constraintStart_toStartOf="@+id/clock_progress_view"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </android.support.constraint.ConstraintLayout>
